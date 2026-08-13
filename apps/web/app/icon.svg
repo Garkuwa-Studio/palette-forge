@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Palette Forge">
+  <!--
+    Favicon: the logo's swatch-strip motif, reduced to what survives at 16px.
+
+    The full logo has five bars, but the fifth is charcoal and disappears into
+    the dark ground at favicon scale, so four is what a reader actually
+    perceives. Dropping it buys the remaining bars the width they need to
+    stay distinct.
+
+    Canonical brand hexes, not the ones sampled from the rendered logo: that
+    image drifted a few units per channel in generation, and the palette is the
+    source of truth.
+  -->
+  <rect width="64" height="64" rx="14" fill="#08090c"/>
+  <g>
+    <rect x="6"  y="14" width="10" height="36" rx="4" fill="#4cc9f0"/>
+    <rect x="20" y="14" width="10" height="36" rx="4" fill="#f0554c"/>
+    <rect x="34" y="14" width="10" height="36" rx="4" fill="#f0a44c"/>
+    <rect x="48" y="14" width="10" height="36" rx="4" fill="#4cf0a8"/>
+  </g>
+</svg>

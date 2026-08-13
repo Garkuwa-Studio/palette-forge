@@ -1,0 +1,21 @@
+{
+  "name": "palette-forge-monorepo",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.9.0",
+  "engines": {
+    "node": ">=20.11"
+  },
+  "scripts": {
+    "build": "pnpm --filter palette-forge build && pnpm --filter @palette-forge/web build",
+    "dev": "pnpm --filter @palette-forge/web dev",
+    "test": "pnpm --filter palette-forge test",
+    "typecheck": "pnpm -r typecheck",
+    "lint": "pnpm -r lint",
+    "release": "pnpm --filter palette-forge release"
+  },
+  "devDependencies": {
+    "typescript": "7.0.2"
+  }
+}

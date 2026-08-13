@@ -1,0 +1,97 @@
+{
+  "name": "palette-forge",
+  "version": "0.1.0",
+  "description": "Extract a brand palette from any image and emit design tokens. OKLab k-means quantisation, WCAG contrast scoring, and CSS/Tailwind/shadcn/DTCG output. Zero dependencies, runs in the browser and Node.",
+  "keywords": [
+    "color",
+    "colour",
+    "palette",
+    "design-tokens",
+    "design-system",
+    "kmeans",
+    "quantization",
+    "oklch",
+    "oklab",
+    "wcag",
+    "contrast",
+    "accessibility",
+    "a11y",
+    "tailwind",
+    "shadcn",
+    "dtcg",
+    "color-extraction",
+    "dominant-color",
+    "theme-generator"
+  ],
+  "license": "MIT",
+  "author": "Palette Forge contributors",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/palette-forge/palette-forge.git",
+    "directory": "packages/palette-forge"
+  },
+  "homepage": "https://paletteforge.dev",
+  "bugs": "https://github.com/palette-forge/palette-forge/issues",
+  "type": "module",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20.11"
+  },
+  "bin": {
+    "palette-forge": "./dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./react": {
+      "types": "./dist/react/index.d.ts",
+      "default": "./dist/react/index.js"
+    },
+    "./node": {
+      "types": "./dist/node/index.d.ts",
+      "default": "./dist/node/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && tsup && tsc -p tsconfig.build.json && node scripts/add-use-client.mjs",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "pnpm build && pnpm test",
+    "release": "pnpm publish --access public --no-git-checks"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "sharp": ">=0.33"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "sharp": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "jpeg-js": "^0.4.4",
+    "pngjs": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "@types/pngjs": "^6.0.5",
+    "@types/react": "^19.2.0",
+    "react": "^19.2.8",
+    "tsup": "^8.5.1",
+    "typescript": "7.0.2",
+    "vitest": "^4.1.10"
+  }
+}

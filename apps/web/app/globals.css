@@ -1,0 +1,235 @@
+@import "tailwindcss";
+
+/**
+ * Theming.
+ *
+ * `@theme inline` makes Tailwind emit utilities as `var(--pf-*)` references
+ * rather than copying the literal values in at build time. That indirection is
+ * what lets the whole palette swap at runtime, without it, `bg-surface` would
+ * be frozen to whichever value was defined first and no toggle could move it.
+ *
+ * Light is the base on `:root`. Dark is applied twice, on purpose:
+ *   1. under `prefers-color-scheme: dark`, guarded so an explicit light choice wins
+ *   2. under `[data-theme="dark"]`, so the toggle overrides the OS in both directions
+ *
+ * Every light-mode text colour below is contrast-checked against every light
+ * surface, see `scripts/check-contrast.mjs`.
+ */
+@theme inline {
+  --color-bg: var(--pf-bg);
+  --color-surface: var(--pf-surface);
+  --color-surface-2: var(--pf-surface-2);
+  --color-line: var(--pf-line);
+  --color-line-bright: var(--pf-line-bright);
+  --color-txt: var(--pf-txt);
+  --color-muted: var(--pf-muted);
+  --color-faint: var(--pf-faint);
+  --color-accent: var(--pf-accent);
+  --color-warn: var(--pf-warn);
+  --color-bad: var(--pf-bad);
+  --color-ok: var(--pf-ok);
+
+  /* Readable text on a filled accent block, flips with the theme. */
+  --color-on-accent: var(--pf-on-accent);
+  /* Code blocks: body text and literal values. */
+  --color-code: var(--pf-code);
+  --color-code-value: var(--pf-code-value);
+  /* Hairline that separates a colour chip from the page behind it. */
+  --color-chip-ring: var(--pf-chip-ring);
+
+  /* Syntax highlighting. Built from the brand hues rather than a borrowed
+     editor theme, so code blocks read as part of this product. */
+  --color-syn-comment: var(--pf-syn-comment);
+  --color-syn-string: var(--pf-syn-string);
+  --color-syn-keyword: var(--pf-syn-keyword);
+  --color-syn-number: var(--pf-syn-number);
+  --color-syn-fn: var(--pf-syn-fn);
+  --color-syn-builtin: var(--pf-syn-builtin);
+  --color-syn-prop: var(--pf-syn-prop);
+  --color-syn-punct: var(--pf-syn-punct);
+
+  --font-mono: ui-monospace, "SF Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, system-ui, sans-serif;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ---------------------------------------------------------------- light --- */
+
+:root {
+  --pf-bg: #ffffff;
+  --pf-surface: #f6f7f9;
+  --pf-surface-2: #eceff3;
+  --pf-line: #e3e6ec;
+  --pf-line-bright: #cbd2dc;
+
+  --pf-txt: #0f1219; /* 18.74:1 on white */
+  --pf-muted: #59616f; /* 6.24:1 on white, 5.41:1 on surface-2 */
+  --pf-faint: #5f6876; /* 5.45:1 on white, 4.72:1 on surface-2 */
+
+  /* Brand colours darkened until they clear AA on the lightest surfaces.
+     Derived with this project's own ensureContrast(). */
+  --pf-accent: #007693;
+  --pf-warn: #9c5f00;
+  --pf-bad: #c83732;
+  --pf-ok: #007c51;
+
+  --pf-on-accent: #ffffff;
+  --pf-code: #2b3340;
+  --pf-code-value: #8a5a00;
+
+  --pf-syn-comment: #687180;
+  --pf-syn-string: #007c51;
+  --pf-syn-keyword: #9c5f00;
+  --pf-syn-number: #8a5a00;
+  --pf-syn-fn: #007693;
+  --pf-syn-builtin: #b5462f;
+  --pf-syn-prop: #2b3340;
+  --pf-syn-punct: #687180;
+  --pf-chip-ring: rgb(0 0 0 / 0.18);
+
+  color-scheme: light;
+}
+
+/* ----------------------------------------------------------------- dark --- */
+
+/* Keep these two blocks identical. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --pf-bg: #08090c;
+    --pf-surface: #0e1015;
+    --pf-surface-2: #14171f;
+    --pf-line: #1f2430;
+    --pf-line-bright: #2c3444;
+
+    --pf-txt: #e8eaf0;
+    --pf-muted: #7c8598;
+    --pf-faint: #8b94a5;
+
+    --pf-accent: #4cc9f0;
+    --pf-warn: #f0a44c;
+    --pf-bad: #f0554c;
+    --pf-ok: #4cf0a8;
+
+    --pf-on-accent: #04070a;
+    --pf-code: #c9d1e0;
+    --pf-code-value: #f0c24c;
+
+    --pf-syn-comment: #737e90;
+    --pf-syn-string: #4cf0a8;
+    --pf-syn-keyword: #f0a44c;
+    --pf-syn-number: #f0c24c;
+    --pf-syn-fn: #4cc9f0;
+    --pf-syn-builtin: #f0554c;
+    --pf-syn-prop: #c9d1e0;
+    --pf-syn-punct: #7c8598;
+    --pf-chip-ring: rgb(255 255 255 / 0.16);
+
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --pf-bg: #08090c;
+  --pf-surface: #0e1015;
+  --pf-surface-2: #14171f;
+  --pf-line: #1f2430;
+  --pf-line-bright: #2c3444;
+
+  --pf-txt: #e8eaf0;
+  --pf-muted: #7c8598;
+  --pf-faint: #8b94a5;
+
+  --pf-accent: #4cc9f0;
+  --pf-warn: #f0a44c;
+  --pf-bad: #f0554c;
+  --pf-ok: #4cf0a8;
+
+  --pf-on-accent: #04070a;
+  --pf-code: #c9d1e0;
+  --pf-code-value: #f0c24c;
+  --pf-chip-ring: rgb(255 255 255 / 0.16);
+
+  --pf-syn-comment: #737e90;
+  --pf-syn-string: #4cf0a8;
+  --pf-syn-keyword: #f0a44c;
+  --pf-syn-number: #f0c24c;
+  --pf-syn-fn: #4cc9f0;
+  --pf-syn-builtin: #f0554c;
+  --pf-syn-prop: #c9d1e0;
+  --pf-syn-punct: #7c8598;
+
+  color-scheme: dark;
+}
+
+/* ----------------------------------------------------------------- base --- */
+
+@layer base {
+  * {
+    min-width: 0;
+  }
+
+  html {
+    scrollbar-gutter: stable;
+    /* Anchor links in the docs glide rather than jump. Reduced-motion is
+       honoured by the media query at the bottom of this file. */
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--color-bg);
+    color: var(--color-txt);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    /* Softens the swap so a theme change reads as a transition, not a flash.
+       Deliberately not `transition: all`. That would drag every hover with it. */
+    transition:
+      background-color 200ms var(--ease-out-expo),
+      color 200ms var(--ease-out-expo);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: 3px;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-accent) 28%, transparent);
+  }
+}
+
+@layer components {
+  /* The small uppercase monospace label used throughout the UI. */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+}
+
+@layer utilities {
+  /* Wide content (token blocks, the contrast table) scrolls inside its own box
+     rather than pushing the page sideways. */
+  .scroll-x {
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
