@@ -27,11 +27,11 @@
   "author": "Palette Forge contributors",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/palette-forge/palette-forge.git",
+    "url": "git+https://github.com/KodeSage/palette-forge.git",
     "directory": "packages/palette-forge"
   },
   "homepage": "https://paletteforge.dev",
-  "bugs": "https://github.com/palette-forge/palette-forge/issues",
+  "bugs": "https://github.com/KodeSage/palette-forge/issues",
   "type": "module",
   "sideEffects": false,
   "engines": {
