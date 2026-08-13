@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/palette-forge/palette-forge/main/assets/hero.jpg" alt="Palette Forge: five colour swatches being separated out of an image by beams of light" width="720">
+<img src="https://raw.githubusercontent.com/KodeSage/palette-forge/main/assets/hero.jpg" alt="Palette Forge: five colour swatches being separated out of an image by beams of light" width="720">
 
 </div>
 
@@ -18,8 +18,8 @@ npx palette-forge logo.png
 
 That's the whole thing. Nothing to install, no account, no upload. It runs on your machine.
 
-> **New to this?** → **[Getting started](https://github.com/palette-forge/palette-forge/blob/main/docs/getting-started.md)** walks through it
-> with no jargon at all. Hit an unfamiliar word? → **[Glossary](https://github.com/palette-forge/palette-forge/blob/main/docs/glossary.md)**.
+> **New to this?** → **[Getting started](https://github.com/KodeSage/palette-forge/blob/main/docs/getting-started.md)** walks through it
+> with no jargon at all. Hit an unfamiliar word? → **[Glossary](https://github.com/KodeSage/palette-forge/blob/main/docs/glossary.md)**.
 
 ---
 
@@ -91,8 +91,8 @@ dependencies.
 
 ## Contents
 
-- [Getting started, no jargon](https://github.com/palette-forge/palette-forge/blob/main/docs/getting-started.md) ← *start here if any of the above lost you*
-- [Glossary](https://github.com/palette-forge/palette-forge/blob/main/docs/glossary.md): every technical term, explained plainly
+- [Getting started, no jargon](https://github.com/KodeSage/palette-forge/blob/main/docs/getting-started.md) ← *start here if any of the above lost you*
+- [Glossary](https://github.com/KodeSage/palette-forge/blob/main/docs/glossary.md): every technical term, explained plainly
 - [Install](#install)
 - [Browser](#browser)
 - [React](#react)
