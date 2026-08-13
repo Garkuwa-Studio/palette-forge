@@ -23,7 +23,7 @@ export default function Home() {
                 npm
               </a>
               <a
-                href="https://github.com/palette-forge/palette-forge"
+                href="https://github.com/KodeSage/palette-forge"
                 className="hover:text-accent"
                 target="_blank"
                 rel="noreferrer"

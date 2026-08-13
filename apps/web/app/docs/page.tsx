@@ -331,7 +331,7 @@ curl -X POST https://paletteforge.dev/api/extract \\
         <p className="mt-4 text-[13px]">
           The{" "}
           <a
-            href="https://github.com/palette-forge/palette-forge/blob/main/docs/glossary.md"
+            href="https://github.com/KodeSage/palette-forge/blob/main/docs/glossary.md"
             target="_blank"
             rel="noreferrer"
             className="text-txt underline underline-offset-2 hover:text-accent"
