@@ -2,7 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { NO_FLASH_SCRIPT } from "@/components/ThemeToggle";
 import "./globals.css";
 
-const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://paletteforge.dev";
+const SITE =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://palette-forge-web.vercel.app/";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
