@@ -67,7 +67,7 @@
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit",
     "prepublishOnly": "pnpm build && pnpm test",
-    "release": "pnpm publish --access public --no-git-checks"
+    "release": "pnpm publish --access public"
   },
   "peerDependencies": {
     "react": ">=18",

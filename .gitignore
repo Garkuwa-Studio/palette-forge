@@ -9,3 +9,6 @@ coverage/
 .env.local
 .turbo/
 *.tgz
+
+# Never commit registry credentials
+.npmrc
