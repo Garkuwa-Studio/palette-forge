@@ -1,6 +1,6 @@
 {
   "name": "palette-forge",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Extract a brand palette from any image and emit design tokens. OKLab k-means quantisation, WCAG contrast scoring, and CSS/Tailwind/shadcn/DTCG output. Zero dependencies, runs in the browser and Node.",
   "keywords": [
     "color",
