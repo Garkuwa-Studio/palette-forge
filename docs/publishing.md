@@ -109,7 +109,7 @@ pnpm --filter @palette-forge/web start
 
 | Variable | | |
 |---|---|---|
-| `NEXT_PUBLIC_SITE_URL` | Absolute origin, used for canonical URLs and OG metadata | `https://paletteforge.dev` |
+| `NEXT_PUBLIC_SITE_URL` | Absolute origin, used for canonical URLs and OG metadata | `https://palette-forge-web.vercel.app/` |
 
 Routes:
 

@@ -30,7 +30,7 @@
     "url": "git+https://github.com/KodeSage/palette-forge.git",
     "directory": "packages/palette-forge"
   },
-  "homepage": "https://paletteforge.dev",
+  "homepage": "https://palette-forge-web.vercel.app/",
   "bugs": "https://github.com/KodeSage/palette-forge/issues",
   "type": "module",
   "sideEffects": false,

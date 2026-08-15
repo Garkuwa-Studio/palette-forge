@@ -21,7 +21,7 @@ That's the whole tool. Really.
 
 ## The two-second version
 
-Open **[paletteforge.dev](https://paletteforge.dev)** and drag your picture onto the page.
+Open **[palette-forge-web](https://palette-forge-web.vercel.app/)** and drag your picture onto the page.
 
 The colours appear. Click one to copy it. That's you finished.
 

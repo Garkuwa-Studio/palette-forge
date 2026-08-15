@@ -12,3 +12,4 @@ coverage/
 
 # Never commit registry credentials
 .npmrc
+.vercel
